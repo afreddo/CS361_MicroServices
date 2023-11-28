@@ -14,21 +14,20 @@ def split(input):
     return split_input
 
 def validateTime(value):
-    split_time = value.split(':')
+    #Break down value and check to ensure that it is a valid size
+    stripped_value = value.strip()
+    positive_value = stripped_value.lstrip('-')
+    split_value = positive_value.split('.')
 
-    # Check to see if the hours and minutes are the correct length
-    if len(split_time) != 2 or len(split_time[0]) > 2 or len(split_time[1]) != 2:
+    if len(split_value) > 2 or split_value == "":
         return False
+
+    # Check to make sure value is a number
+    for val in split_value:
+        if not val.isdigit():
+            return False
     
-    # Validate the values of hours and mins
-    hours = split_time[0]
-    mins = split_time[1]
-    if int(hours) > 23:
-        return False
-    if int(mins) > 59:
-        return False
-    
-    # If this point is reached -> value is valid
+    # Value is valid so return True
     return True
 
 def validateTemp(value):
