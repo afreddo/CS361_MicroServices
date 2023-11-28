@@ -38,3 +38,4 @@ f.closed
 
 ## UML sequence diagram showing communication between main program and the microservice
 
+![UML_Diagram](https://github.com/afreddo/CS361_MicroServices/assets/64040498/93acdd01-4bc5-4a6c-a31c-dbc14e053ab9)
