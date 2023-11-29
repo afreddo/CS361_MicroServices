@@ -16,13 +16,12 @@ def split(input):
 def validateTime(value):
     #Break down value and check to ensure that it is a valid size
     stripped_value = value.strip()
-    positive_value = stripped_value.lstrip('-')
-    split_value = positive_value.split('.')
+    split_value = stripped_value.split('.')
 
     if len(split_value) > 2 or split_value == "":
         return False
 
-    # Check to make sure value is a number
+    # Check to make sure value is a positive number
     for val in split_value:
         if not val.isdigit():
             return False
